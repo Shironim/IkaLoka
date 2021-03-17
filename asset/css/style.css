@@ -93,12 +93,38 @@ body{
   min-height: 300px;
 }
 
+/* Keranjang Belanja */
+#cart .keranjang-belanja .row img.img-fluid{
+  max-height: 100px;
+}
+
+
 /* Nav footer */
 .menu a span.fs-6{
   font-weight: 500 !important;
 }
+
+/* Pesanan Page */
+#root .keranjang-belanja .produk .row img.img-fluid{
+  max-height: 100px;
+}
+
+/* Daftar Page */
+
+#root .row form .sdk p{
+  /* max-height: 100px; */
+  font-size: 14px !important;
+}
+
+/* Produk Page md Screen */
 @media only screen and (max-width: 768px) and (min-width: 576px) {
-  #root .row img.img-fluid{
+  #root .row img.img-responsive-md{
     max-height: 300px;
+  }
+  #root .row .fs-5{
+    font-size: 16px !important;
+  }
+  #root .row .fs-6{
+    font-size: 14px !important;
   }
 }
