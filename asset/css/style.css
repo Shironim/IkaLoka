@@ -1,3 +1,6 @@
+body{
+  font-family: 'Montserrat', sans-serif !important;
+}
 /* Carousel */
 #carouselExampleIndicators{
   max-height: 400px;
@@ -10,10 +13,6 @@
 .card{
   cursor: pointer;
   box-shadow: 0 1px 4px 1px rgba(0,0,0,0.1);
-}
-.card .card-body .card-price{
-  font-size: 18px;
-  font-weight: bold;
 }
 /* Card Img */
 .card img.card-img-top{
@@ -31,7 +30,7 @@
 .card .card-body .card-diskon .price{
   /* font-style: oblique; */
   text-decoration: line-through;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: normal;
 }
 .card .card-body .card-diskon .diskon{
@@ -42,6 +41,9 @@
   font-weight: bold;
   font-size: 12px;
 
+}
+.card .card-body .card-price{
+  font-weight: 500;
 }
 /* Star icon */
 .fa-star{
@@ -89,4 +91,14 @@
 }
 #cart .keranjang-belanja{
   min-height: 300px;
+}
+
+/* Nav footer */
+.menu a span.fs-6{
+  font-weight: 500 !important;
+}
+@media only screen and (max-width: 768px) and (min-width: 576px) {
+  #root .row img.img-fluid{
+    max-height: 300px;
+  }
 }

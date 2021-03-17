@@ -1,9 +1,28 @@
-<!-- @media not (max-width: 639px) {
-  /* CSS rules for any device that is wider than 639 pixels */
+@media only screen and (max-width: 576px) and (min-width: 280px) {
+  /* index html */
+  /* Hero */
+  #carouselExampleIndicators .carousel-inner .carousel-item .fit-height{
+    height: 200px;
   }
-  @media screen and (orientation:portrait) {
-    /* ... */
+  /* produk */
+  .card-body{
+    padding: 6px 12px;
   }
-  @media screen and (orientation: landscape) {
-    /* ... */
-  } -->
+  #musim-ikan .row .card-body .card-diskon .price{
+    font-size: 12px;
+  }
+  .menu a span.fs-6{
+    font-size: 13px !important;
+  }
+  .menu a span.fs-5{
+    font-size: 1.2rem !important;
+  }
+
+  /* Produk Page */
+  #root .row img.img-fluid{
+    max-height: 200px;
+  }
+  #root .row .detail .button span{
+    font-size: 14px !important;
+  }
+}
