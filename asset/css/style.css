@@ -71,10 +71,6 @@ body{
   font-weight: bold;
   font-size: 12px;
 }
-.price-div .harga-asli {
-  font-size: 30px;
-  font-weight: bold;
-}
 
 /* Jumlah Ikan */
 
@@ -127,4 +123,5 @@ body{
   #root .row .fs-6{
     font-size: 14px !important;
   }
+
 }

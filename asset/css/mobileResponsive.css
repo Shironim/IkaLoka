@@ -1,5 +1,6 @@
 @media only screen and (max-width: 576px) and (min-width: 280px) {
   /* index html */
+
   /* Hero */
   #carouselExampleIndicators .carousel-inner .carousel-item .fit-height{
     height: 200px;
@@ -7,6 +8,12 @@
   /* produk */
   .card-body{
     padding: 6px 12px;
+  }
+  .card .card-body .card-price{
+    font-size: 14px !important;
+  }
+  .card .card-body .card-diskon .price{
+    font-size: 10px !important;
   }
   #musim-ikan .row .card-body .card-diskon .price{
     font-size: 12px;
@@ -23,7 +30,7 @@
     max-height: 200px;
   }
   #root .row .detail .button span{
-    font-size: 14px !important;
+    font-size: 12px !important;
   }
 
   /* Pesanan Page */
@@ -46,5 +53,13 @@
   .row .fs-6{
     /* max-height: 100px; */
     font-size: 0.8rem !important;
+  }
+
+  /* Header */
+  .span{
+    font-size: 14px !important;
+  }
+  .badge{
+    font-size: 12px !important;
   }
 }
