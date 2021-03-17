@@ -1,0 +1,92 @@
+/* Carousel */
+#carouselExampleIndicators{
+  max-height: 400px;
+}
+#carouselExampleIndicators .carousel-inner .carousel-item .fit-height{
+  height: 400px;
+  object-fit: cover;
+}
+/* Card Produk */
+.card{
+  cursor: pointer;
+  box-shadow: 0 1px 4px 1px rgba(0,0,0,0.1);
+}
+.card .card-body .card-price{
+  font-size: 18px;
+  font-weight: bold;
+}
+/* Card Img */
+.card img.card-img-top{
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+/* Badge */
+.card .badge{
+  top: 12px;
+  right: 12px;
+  font-size: 14px;
+  font-weight: bold;
+}
+/* Diskon text*/
+.card .card-body .card-diskon .price{
+  /* font-style: oblique; */
+  text-decoration: line-through;
+  font-size: 14px;
+  font-weight: normal;
+}
+.card .card-body .card-diskon .diskon{
+  color: #C1292E;
+  padding: 2px 4px;
+  background-color: #F44E3F;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 12px;
+
+}
+/* Star icon */
+.fa-star{
+  color: #F5E663;
+}
+.card .card-body .card-star .ulasan{
+  color: #c7c2ce;
+}
+
+/* Produk Page */
+.review .circle{
+  margin: 0 4px;
+}
+
+.price-div .harga-diskon .price{
+  text-decoration: line-through;
+  font-size: 14px;
+  font-weight: normal;
+}
+.price-div .harga-diskon .diskon{
+  color: #C1292E;
+  padding: 2px 4px;
+  background-color: #F44E3F;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 12px;
+}
+.price-div .harga-asli {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* Jumlah Ikan */
+
+/* Nav Footer */
+
+
+
+/* Keranjang Belanja */
+.he-60{
+  max-height: 60px;
+}
+.mb-90{
+  margin-bottom: 90px;
+}
+#cart .keranjang-belanja{
+  min-height: 300px;
+}

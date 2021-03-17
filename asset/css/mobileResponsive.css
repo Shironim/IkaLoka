@@ -1,0 +1,9 @@
+<!-- @media not (max-width: 639px) {
+  /* CSS rules for any device that is wider than 639 pixels */
+  }
+  @media screen and (orientation:portrait) {
+    /* ... */
+  }
+  @media screen and (orientation: landscape) {
+    /* ... */
+  } -->
