@@ -1,7 +1,7 @@
 <?php 
   require_once('../config/_config.php');
   if (isset($_SESSION['email'])) {
-    header('Location: ../index.php');
+    header('Location: home');
   }else{
 ?>
 <!DOCTYPE html>

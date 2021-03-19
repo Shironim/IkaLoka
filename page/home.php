@@ -40,7 +40,7 @@
     <h1 class="fs-3">Panen Ikan Musim Ini</h1>
     <div class="row">
       <div class="col-lg-3 col-md-4 col-6 px-lg-2 py-lg-2 px-1 py-1">
-        <a href="produk.html" class="text-dark text-decoration-none">
+        <a href="produk" class="text-dark text-decoration-none">
           <div class="card" style="width: 100%;">
             <img src="asset/img/1.jpg" class="card-img-top" alt="...">
             <span class="badge bg-primary position-absolute">Musim Ikan</span>

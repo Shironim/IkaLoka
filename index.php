@@ -25,6 +25,8 @@
         require_once('page/keranjang-belanja.php');
       }else if ($_GET['page'] == 'pesanan') {
         require_once('page/pesanan.php');
+      }else if ($_GET['page'] == 'akun') {
+        require_once('page/akun.php');
       }
     ?>
   </main>

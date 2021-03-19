@@ -1,0 +1,17 @@
+<IfModule mod_rewrite.c>
+
+RewriteEngine on
+
+RewriteRule ^home$ index.php?page=home [L]
+RewriteRule ^produk$ index.php?page=produk [L]
+RewriteRule ^keranjang$ index.php?page=keranjang [L]
+RewriteRule ^pesanan$ index.php?page=pesanan [L]
+RewriteRule ^akun$ index.php?page=akun [L]
+RewriteRule ^login$ page/login.php [L]
+RewriteRule ^daftar$ page/daftar.php [L]
+RewriteRule ^detail$ page/detail-pemesanan.php [L]
+
+RewriteRule ^/?([A-Za-z0-9_-]+)/?$ index.php?page=$1 [L]
+
+
+</IfModule>
