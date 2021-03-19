@@ -1,7 +1,11 @@
-<?php require_once('../config/_config.php')?>
+<?php 
+  require_once('../config/_config.php');
+  if (isset($_SESSION['email'])) {
+    header('Location: ../index.php');
+  }else{
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <?php require_once('../component/meta.php')?>
 </head>
@@ -89,18 +93,21 @@
         </div>
         <div class="col-lg-5 col-md-6 col-sm-11 col-11 ">
           <div class="card col-lg-10 col-md-11 col-sm-12 col-12">
-            <form class="p-4">
+            <form action='' method='POST' class="p-4">
               <div class="d-flex justify-content-between mb-4">
                 <h3 class="fs-4 text-center">Login</h3>
                 <p><a href="<?=base_url('page/daftar.php');?>" class="text-decoration-none">Daftar</a></p>
               </div>
               <div class="mb-3">
-                <label for="formGroupExampleInput" class="form-label">Alamat Email</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="admin@ikaloka.id">
+                <label for="email" class="form-label">Alamat Email</label>
+                <input type="text" name="email" class="form-control" id="email" placeholder="admin@ikaloka.id" require>
+                <!-- <div class="invalid-feedback">
+                  Masukan Email yang benar.
+                </div> -->
               </div>
               <div class="mb-3">
                 <label for="formGroupExampleInput2" class="form-label">Password</label>
-                <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="*********">
+                <input type="password" name="password" class="form-control" id="formGroupExampleInput2" placeholder="*********" require>
               </div>
               <div class="row mb-3">
                 <div class="col-sm-12">
@@ -112,9 +119,23 @@
                   </div>
                 </div>
               </div>
-              <button type="submit" class="btn btn-primary fw-bold w-100">Selanjutnya</button>
+              <button type="submit" name="submit" class="btn btn-primary fw-bold w-100">Selanjutnya</button>
               <p class="text-center mt-3">Belum punya akun ? <a href="<?=base_url('page/daftar.php');?>" class="text-decoration-none">Daftar</a></p>
             </form>
+
+            <?php
+              if (isset($_POST['submit'])) {
+                $email = $_POST['email'];
+                $password = $_POST['password'];
+
+                $ada = mysqli_query($conn,"SELECT * FROM user");
+                // $sql = mysqli_fetch_array($ada);
+                if (mysqli_num_rows($ada) == 1) {
+                  $_SESSION['email'] = $email;
+                  header('Location: ../index.php');
+                }
+              }
+            ?>
           </div>
         </div>
       </div>
@@ -126,3 +147,4 @@
 </body>
 
 </html>
+<?php }?>

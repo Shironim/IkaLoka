@@ -1,5 +1,8 @@
-<?php include_once('config/_config.php')?>
-
+<?php 
+  include_once('config/_config.php');
+  if (!isset($_SESSION['email'])) {
+    header('Location: page/login.php');
+  }else {?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +15,9 @@
   <?php require_once('component/header.php') ?>
   <main id="root" class="mb-90">
     <?php
-      if ($_GET['page'] == 'home') {
+      if (@$_GET['page'] == '') {
+        require_once('page/home.php');
+      }else if($_GET['page'] == 'home'){
         require_once('page/home.php');
       }else if ($_GET['page'] == 'produk') {
         require_once('page/produk.php');
@@ -29,3 +34,4 @@
 </body>
 
 </html>
+<?php }?>
