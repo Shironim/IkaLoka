@@ -38,5 +38,13 @@
         </div>
       </div>
     </section>
+    <footer class="d-flex flex-column">
+      <div class="subtotal d-flex justify-content-between">
+        <h3>Total Pembayaran</h3>
+        <h3>Rp. 0</h3>
+      </div>
+      <p class="text-muted"><i class="fas fa-exclamation-circle"></i> Belum termasuk biaya antar</p>
+      <button class="btn btn-dark">Checkout</button>
+    </footer>
   </div>
 </section>

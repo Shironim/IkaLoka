@@ -1,3 +1,9 @@
+<?php
+  $produks = mysqli_query($conn,"SELECT * FROM produk WHERE id_produk = 2");
+
+  $produk = mysqli_fetch_array($produks);
+?>
+
 <section class="container-xl container-md container-sm container">
   <div class="row">
     <div class="col-lg-4 col-md-4 col-sm-10 col-10 mb-4">
@@ -20,7 +26,7 @@
         </div> -->
     </div>
     <div class="col-lg-8 col-md-8 col-sm-10 col-10">
-      <h1 class="fs-3">Ikan Tuna Segar</h1>
+      <h1 class="fs-3"><?= $produk['nama']?></h1>
       <!-- <div class="review d-inline-block mb-2">
         <span class="p-0">
           <i class="fas fa-star"></i>
@@ -34,24 +40,23 @@
       </div> -->
       <div class="price-div">
         <p class="harga-diskon mb-2 text-muted">
-          <span class="diskon">20%</span>
-          <span class="price">Rp18.000/0.5 Kg</span>
+          <span class="diskon"><?= $produk['diskon']?></span>
+          <span class="price"><?= $produk['harga']?></span>
         </p>
-        <p class="fs-5 fw-bold">Rp16.000/0.5Kg</p>
+        <p class="fs-5 fw-bold">Rp. <?= $produk['harga']?></p>
       </div>
       <hr>
       <div class="detail">
         <span class="fs-5 fw-bold text-primary border-bottom border-primary border-2">Detail</span>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi atque distinctio quis veniam at illo
-          eaque. Itaque, delectus. Voluptatum dolorum delectus quas minus consectetur ratione tempore molestiae
-          voluptatem adipisci expedita.
+          <?= $produk['deskripsi']?>
         </p>
         <div class="jml-produk">
           <div class="kuantiti-produk mb-1">
             <i class="fs-4 text-primary fas fa-minus-circle"></i>
             <span class="fs-5 mx-2 jumlah">1</span>
             <i class="fs-4 text-primary fas fa-plus-circle"></i>
+            <span>Stok <?= $produk['stok']?></span>
           </div>
           <!-- <div class="catatan">
             <p class="fs-6 fw-bold"><i class="far fa-clipboard"></i> Tambahkan catatan</p>
@@ -70,18 +75,22 @@
   <div class="container-xl container-md container-sm container mt-5 mb-4">
     <h2 class="fs-2">Ikan Lainnya</h2>
     <div class="row">
+    <?php 
+      $produks = mysqli_query($conn,"SELECT * FROM produk WHERE isMusim = 1");
+
+      while ($produk = mysqli_fetch_array($produks)) {?>
       <div class="col-lg-3 col-md-4 col-6 px-lg-2 py-lg-2 px-1 py-1">
-        <a href="produk.html" class="text-dark text-decoration-none">
+        <a href="produk" class="text-dark text-decoration-none">
           <div class="card" style="width: 100%;">
             <img src="asset/img/1.jpg" class="card-img-top" alt="...">
             <span class="badge bg-primary position-absolute">Musim Ikan</span>
             <div class="card-body">
-              <h5 class="card-title mb-3">Ikan Tuna</h5>
+              <h5 class="card-title mb-3"><?= $produk['nama']?></h5>
               <p class="card-diskon mb-2">
-                <span class="diskon me-1">20%</span>
-                <span class="price text-muted">Rp18.000/0.5 Kg</span>
+                <span class="diskon me-lg-2 me-md-2 me-sm-1 me-0"><?= $produk['diskon']?>%</span>
+                <span class="price text-muted"><?= $produk['harga']-($produk['harga']/$produk['diskon'])?></span>
               </p>
-              <p class="card-price mb-0">Rp. 16.000/0.5 Kg</p>
+              <p class="card-price mb-0">Rp. <?= $produk['harga']?></p>
               <!-- <p class="card-star p-0">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -95,7 +104,7 @@
           </div>
         </a>
       </div>
-
+      <?php }?>
     </div>
   </div>
 </section>

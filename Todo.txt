@@ -1,0 +1,17 @@
+Todo:
+// Form
+Error Message
+validasi form daftar
+validasi form login
+validasi query
+loader
+ 
+// Keranjang Belanja
+interaksi keranjang belanja
+ajax query keranjang belanja
+
+// Akun
+edit profile akun
+
+// Home
+informasi ketentuan beli

@@ -1,9 +1,16 @@
+
+
 <section id="cart" class="mb-5">
   <div class="container-xl container-md container-sm container container-md container-sm container mt-4">
     <header>
       <h2>Keranjang Belanja</h2>
       <!-- <hr> -->
     </header>
+
+    <?php
+      $produks = mysqli_query($conn,"SELECT * FROM keranjang");
+
+      if (mysqli_num_rows($produks) < 1) {?>
     <section class="d-flex justify-content-center keranjang-belanja text-center">
       <div class="col-lg-4 col-md-6 col-sm-8 col-8 mb-5">
         <svg id="ffc6eb9a-0ec0-429c-85a8-ff38b44048bf" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
@@ -125,23 +132,8 @@
         </div>
       </div>
     </section>
-    <footer class="d-flex flex-column">
-      <div class="subtotal d-flex justify-content-between">
-        <h3>Total Pembayaran</h3>
-        <h3>Rp. 0</h3>
-      </div>
-      <p class="text-muted"><i class="fas fa-exclamation-circle"></i> Belum termasuk biaya antar</p>
-      <button class="btn btn-dark">Checkout</button>
-    </footer>
-  </div>
-</section>
-<section id="cart">
-  <div class="container-xl">
-    <header>
-      <h2>Keranjang Belanja</h2>
-      <!-- <hr> -->
-    </header>
-    <section class="keranjang-belanja mt-4">
+    <?php }else{?>
+      <section class="keranjang-belanja mt-4">
       <div class="row">
         <div class="col-3">
           <img class="img-fluid h-100 w-auto"
@@ -167,8 +159,9 @@
         </div>
       </div>
     </section>
-    <footer class="d-flex flex-column subtotal mb-90">
-      <div class="d-flex justify-content-between">
+    <?php } ?>
+    <footer class="d-flex flex-column">
+      <div class="subtotal d-flex justify-content-between">
         <h3>Total Pembayaran</h3>
         <h3>Rp. 0</h3>
       </div>
