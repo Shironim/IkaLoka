@@ -12,9 +12,16 @@
           </svg>
         </a>
         <div class="align-self-center col-6 text-end">
-          <a href="login" class="text-decoration-none fw-bold"><span class="mx-lg-3 mx-sm-2 mx-1 span">Login</span></a>
-          <span class="text-primary">|</span>
-          <a href="daftar" class="text-decoration-none fw-bold"><span class="mx-lg-3 mx-sm-2 mx-1 span">Daftar</span></a>
+          <?php
+            if (isset($_SESSION['email'])) {?>
+            <span class="mx-lg-3 mx-sm-2 mx-1 span">Haloo <?= $_SESSION['email']?></span>
+            <span class="text-primary">|</span>
+            <a href="logout" class="text-decoration-none fw-bold"><span class="mx-lg-3 mx-sm-2 mx-1 span">Logout</span></a>
+            <?php }else{?>
+              <a href="login" class="text-decoration-none fw-bold"><span class="mx-lg-3 mx-sm-2 mx-1 span">Login</span></a>
+              <span class="text-primary">|</span>
+              <a href="daftar" class="text-decoration-none fw-bold"><span class="mx-lg-3 mx-sm-2 mx-1 span">Daftar</span></a>
+            <?php }?>
         </div>
       </div>
     </nav>

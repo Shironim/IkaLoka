@@ -1,8 +1,6 @@
 <?php 
   include_once('config/_config.php');
-  if (!isset($_SESSION['email'])) {
-    header('Location: page/login.php');
-  }else {?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,9 +22,17 @@
       }else if ($_GET['page'] == 'keranjang') {
         require_once('page/keranjang-belanja.php');
       }else if ($_GET['page'] == 'pesanan') {
-        require_once('page/pesanan.php');
+        if (isset($_SESSION['email'])) {
+          require_once('page/pesanan.php');
+        }else{
+          echo"<script>document.location.href='login'</script>";
+        }
       }else if ($_GET['page'] == 'akun') {
-        require_once('page/akun.php');
+        if (isset($_SESSION['email'])) {
+          require_once('page/akun.php');
+        }else{
+          echo"<script>document.location.href='login'</script>";
+        }
       }
     ?>
   </main>
@@ -36,4 +42,3 @@
 </body>
 
 </html>
-<?php }?>
