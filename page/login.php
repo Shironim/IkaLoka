@@ -128,11 +128,12 @@
                 $email = $_POST['email'];
                 $password = $_POST['password'];
 
-                $ada = mysqli_query($conn,"SELECT * FROM user");
-                // $sql = mysqli_fetch_array($ada);
+                $ada = mysqli_query($conn,"SELECT * FROM user WHERE email = '$email' AND password = '$password'");
+                $data = mysqli_fetch_array($ada);
                 if (mysqli_num_rows($ada) == 1) {
-                  $_SESSION['email'] = $email;
-                  header('Location: ../index.php');
+                  $_SESSION['email'] = $data['email'];
+                  $_SESSION['nama'] = $data['nama'];
+                  echo"<script>document.location.href='home'</script>";
                 }
               }
             ?>
