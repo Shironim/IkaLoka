@@ -8,6 +8,7 @@ RewriteRule ^keranjang$ index.php?page=keranjang [L]
 RewriteRule ^pesanan$ index.php?page=pesanan [L]
 RewriteRule ^akun$ index.php?page=akun [L]
 RewriteRule ^login$ page/login.php [L]
+RewriteRule ^logout$ page/logout.php [L]
 RewriteRule ^daftar$ page/daftar.php [L]
 RewriteRule ^detail$ page/detail-pemesanan.php [L]
 
