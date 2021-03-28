@@ -5,8 +5,11 @@ body{
 #carouselExampleIndicators{
   max-height: 400px;
 }
+.shadow{
+  box-shadow: 0 4px 8px rgba(0,0,0,.1)!important;
+}
 #carouselExampleIndicators .carousel-inner .carousel-item .fit-height{
-  height: 400px;
+  height: 300px;
   object-fit: cover;
 }
 /* Card Produk */
@@ -71,12 +74,12 @@ body{
   font-weight: bold;
   font-size: 12px;
 }
+/* Badge Footer */
 
-/* Jumlah Ikan */
-
-/* Nav Footer */
-
-
+footer .badge{
+  right: 10px;
+  font-size: 12px;
+}
 
 /* Keranjang Belanja */
 .he-60{
@@ -101,7 +104,7 @@ body{
 }
 
 /* Pesanan Page */
-#root .keranjang-belanja .produk .row img.img-fluid{
+#root .keranjang-belanja .pesanan .row img.img-fluid{
   max-height: 100px;
 }
 
@@ -110,6 +113,30 @@ body{
 #root .row form .sdk p{
   /* max-height: 100px; */
   font-size: 14px !important;
+}
+
+/* Form */
+._form svg {
+	visibility: hidden;
+	position: absolute;
+	top: 40px;
+	right: 10px;
+}
+
+._form.success svg.fa-check-circle {
+	color: #2ecc71;
+	visibility: visible;
+}
+._form.error svg.fa-exclamation-circle {
+	color: #e74c3c;
+	visibility: visible;
+}
+._form.success input {
+	border-color: #2ecc71;
+}
+
+._form.error input {
+	border-color: #e74c3c;
 }
 
 /* Produk Page md Screen */
@@ -123,5 +150,38 @@ body{
   #root .row .fs-6{
     font-size: 14px !important;
   }
-
+  /* page Keranjang Belanja */
+  .header-keranjang h2{
+    font-size: 1.4rem !important;
+  }
+  .header-keranjang h4{
+    font-size: 1.2rem !important;
+  }
+  .subtotal h2{
+    font-size: 1.4rem !important;
+  }
+  .pesan{
+    font-size: 14px !important;
+  }
+  /* Home Caraousel */
+  #carouselExampleIndicators .carousel-inner .carousel-item .fit-height{
+    height: 200px;
+    object-fit: cover;
+  }
+  /* Home alert modal */
+  .alert{
+    padding: 0.8rem 0.8rem !important;
+  }
+  /* Page Pesanan */
+  #root .keranjang-belanja .pesanan .fs-5{
+    font-size: 1.25rem !important;
+  }
+  #root .keranjang-belanja .pesanan .fs-6{
+    font-size: 1.25rem !important;
+  }
+  /* Footer Badge */
+  footer .badge{
+    right: 6px;
+    font-size: 12px;
+  }
 }

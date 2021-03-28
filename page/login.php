@@ -1,5 +1,5 @@
 <?php 
-  require_once('../config/_config.php');
+  require_once('../konfig/konfig.php');
   if (isset($_SESSION['email'])) {
     header('Location: home');
   }else{
@@ -11,8 +11,9 @@
 </head>
 
 <body>
-  <?php require_once('../component/_header.php')?>
-
+  
+  <?php require_once('../component/headerLogin.php')?>
+  
   <main id="root" class="mt-5">
     <div class="container">
       <div class="row justify-content-sm-center justify-content-center">
@@ -92,24 +93,27 @@
           </div>
         </div>
         <div class="col-lg-5 col-md-6 col-sm-11 col-11 ">
-          <div class="card col-lg-10 col-md-11 col-sm-12 col-12">
-            <form action='' method='POST' class="p-4">
+          <div class=" col-lg-10 col-md-11 col-sm-12 col-12">
+            <form id="form" action='' method='POST' class="p-4">
               <div class="d-flex justify-content-between mb-4">
                 <h3 class="fs-4 text-center">Login</h3>
-                <p><a href="<?=base_url('page/daftar.php');?>" class="text-decoration-none">Daftar</a></p>
+                <p><a href="daftar" class="text-decoration-none">Daftar</a></p>
               </div>
-              <div class="mb-3">
+              <div class="mb-3 _form position-relative">
                 <label for="email" class="form-label">Alamat Email</label>
-                <input type="text" name="email" class="form-control" id="email" placeholder="admin@ikaloka.id" require>
-                <!-- <div class="invalid-feedback">
-                  Masukan Email yang benar.
-                </div> -->
+                <input id="email" type="text" name="email" class="form-control" placeholder="admin@ikaloka.id" require>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <div id="invalid" class="invalid-feedback"></div>
               </div>
-              <div class="mb-3">
-                <label for="formGroupExampleInput2" class="form-label">Password</label>
-                <input type="password" name="password" class="form-control" id="formGroupExampleInput2" placeholder="*********" require>
+              <div class="mb-3 _form position-relative">
+                <label for="password" class="form-label">Password</label>
+                <input id="password" type="password" name="password" class="form-control" placeholder="*********" require>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <div id="invalid" class="invalid-feedback"></div>
               </div>
-              <div class="row mb-3">
+              <!-- <div class="row mb-3 _form position-relative">
                 <div class="col-sm-12">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="gridCheck1">
@@ -118,22 +122,25 @@
                     </label>
                   </div>
                 </div>
-              </div>
+              </div> -->
               <button type="submit" name="submit" class="btn btn-primary fw-bold w-100">Selanjutnya</button>
-              <p class="text-center mt-3">Belum punya akun ? <a href="<?=base_url('page/daftar.php');?>" class="text-decoration-none">Daftar</a></p>
+              <p class="fs-6 text-center mt-3">Belum punya akun ? <a href="daftar" class="text-decoration-none">Daftar</a></p>
             </form>
-
             <?php
               if (isset($_POST['submit'])) {
-                $email = $_POST['email'];
-                $password = $_POST['password'];
+                $email = mysqli_real_escape_string($conn, $_POST['email']);
+                $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-                $ada = mysqli_query($conn,"SELECT * FROM user WHERE email = '$email' AND password = '$password'");
+                $ada = mysqli_query($conn,"SELECT * FROM user WHERE email = '$email'");
                 $data = mysqli_fetch_array($ada);
-                if (mysqli_num_rows($ada) == 1) {
-                  $_SESSION['email'] = $data['email'];
-                  $_SESSION['nama'] = $data['nama'];
-                  echo"<script>document.location.href='home'</script>";
+                
+                if (password_verify($password,$data['password'])) {
+                  if (mysqli_num_rows($ada) == 1) {
+                    $_SESSION['email'] = $data['email'];
+                    $_SESSION['id_user'] = $data['id_user'];
+                    $_SESSION['nama'] = $data['nama'];
+                    echo"<script>document.location.href='home'</script>";
+                  }
                 }
               }
             ?>
@@ -142,8 +149,8 @@
       </div>
     </div>
   </main>
-
-  <?php require_once('../component/_footer.php')?>
+  <script src="<?= base_url('asset/js/validasi.js')?>"></script>
+  <?php require_once('../component/footerLogin.php')?>
   <?php require_once('../component/script.php')?>
 </body>
 

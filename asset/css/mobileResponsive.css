@@ -1,9 +1,19 @@
-@media only screen and (max-width: 576px) and (min-width: 280px) {
+@media only screen and (max-width: 576px) and (min-width: 360px) {
   /* index html */
 
   /* Hero */
   #carouselExampleIndicators .carousel-inner .carousel-item .fit-height{
     height: 200px;
+    object-fit: cover;
+  }
+  .alert{
+    padding: 0.6rem 0.6rem !important;
+  }
+  button.alert span.fs-6{
+    font-size: 13px !important;
+  }
+  .responsive-svg{
+    width: 100%;
   }
   /* produk */
   .card-body{
@@ -15,9 +25,7 @@
   .card .card-body .card-diskon .price{
     font-size: 10px !important;
   }
-  #musim-ikan .row .card-body .card-diskon .price{
-    font-size: 12px;
-  }
+
   .menu a span.fs-6{
     font-size: 13px !important;
   }
@@ -26,12 +34,9 @@
   }
 
   /* Produk Page */
-  #root .row img.img-responsive-md{
+  /* #root .row img.img-responsive-md{
     max-height: 200px;
-  }
-  #root .row .detail .button span{
-    font-size: 12px !important;
-  }
+  } */
 
   /* Pesanan Page */
   #root .keranjang-belanja .produk .row .fs-5{
@@ -44,7 +49,10 @@
   /* Keranjang Belanja */
   #cart .keranjang-belanja .row .fs-3{
     /* max-height: 100px; */
-    font-size: 1.25rem !important;
+    font-size: 1rem !important;
+  }
+  .col-4.nama-produk > .fs-5{
+    font-size: 12px !important;
   }
   .row .fs-5{
     /* max-height: 100px; */
@@ -54,6 +62,19 @@
     /* max-height: 100px; */
     font-size: 0.8rem !important;
   }
+  .subtotal h2{
+    font-size: 1rem !important;
+  }
+  .pesan{
+    font-size: 12px !important;
+  }
+  .header-keranjang h2{
+    font-size: 1rem !important;
+  }
+  .header-keranjang h4{
+    font-size: 0.8rem !important;
+    text-align: right;
+  }
 
   /* Header */
   .span{
@@ -61,5 +82,105 @@
   }
   .badge{
     font-size: 12px !important;
+  }
+
+  /* Container */
+  .container{
+    width: 90% !important;
+  }
+  .card-body{
+    padding: 0.8rem 0.8rem !important;
+  }
+  /* Page Pesanan */
+  #root .keranjang-belanja .pesanan .fs-5{
+    font-size: 0.9rem !important;
+  }
+  #root .keranjang-belanja .pesanan .fs-6{
+    font-size: 0.9rem !important;
+  }
+  /* Footer Badge */
+  footer .badge{
+    right: 4px !important;
+    font-size: 10px !important;
+  }
+
+}
+@media only screen and (max-width: 360px) and (min-width: 300px) {
+  .card .card-body .card-price{
+    font-size: 12px !important;
+  }
+  .card .card-body .card-diskon .diskon{
+    font-size: 10px !important;
+  }
+  .card-body{
+    padding: 0.6rem 0.6rem !important;
+  }
+  /* Page Pesanan */
+  #root .keranjang-belanja .pesanan .fs-5{
+    font-size: 0.7rem !important;
+  }
+  #root .keranjang-belanja .pesanan .fs-6{
+    font-size: 0.7rem !important;
+  }
+  .responsive-svg{
+    width: 100%;
+  }
+  /* Container */
+  .container{
+    width: 90% !important;
+  }
+  /* Footer Nav */
+  .menu a span.fs-6{
+    font-size: 11px !important;
+  }
+  .menu a span.fs-5{
+    font-size: 1.1rem !important;
+  }
+  /* Alert Home Page */
+  .alert{
+    padding: 0.5rem 0.5rem !important;
+  }
+  button.alert span.fs-6{
+    font-size: 12px !important;
+  }
+  /* Card produk diskon Home Page */
+  .card .card-body .card-diskon .price{
+    font-size: 10px !important;
+  }
+  /* Footer Badge */
+  footer .badge{
+    right: 2px !important;
+    font-size: 8px !important;
+  }
+  /* Keranjang Belanja */
+  #cart .keranjang-belanja .row .fs-3{
+    /* max-height: 100px; */
+    font-size: 1rem !important;
+  }
+  .col-4.nama-produk > .fs-5{
+    font-size: 12px !important;
+  }
+  .row .fs-5{
+    /* max-height: 100px; */
+    font-size: 1rem !important;
+  }
+  .row .fs-6{
+    /* max-height: 100px; */
+    font-size: 0.8rem !important;
+  }
+  /* Footer Keranjang */
+  .subtotal h2{
+    font-size: 1rem !important;
+  }
+  .pesan{
+    font-size: 12px !important;
+  }
+  /* Header keranjang */
+  .header-keranjang h2{
+    font-size: 0.9rem !important;
+  }
+  .header-keranjang h4{
+    font-size: 0.7rem !important;
+    text-align: right;
   }
 }
