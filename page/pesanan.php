@@ -286,7 +286,7 @@
           ?>
         <div class="row mb-3">
           <div class="col-3 px-1">
-            <img class="img-fluid" src="https://dashboard.tumbasin.id/wp-content/uploads/2020/05/Kentang_t.png" alt="">
+            <img class="img-fluid" src="<?= base_url('asset/img/'.$produk['gambar'])?>" alt="">
           </div>
           <div class="col-3 px-1">
             <p class="fs-5 m-0"><?= $pesanan['nama_produk']?></p>
@@ -296,7 +296,7 @@
             <p class="fs-5 m-0">Rp. <?= number_format($pesanan['total_harga'])?></p>
           </div>
           <div class="col-3 px-1">
-            <p class="fs-5 m-0">pending</p>
+            <p class="fs-5 m-0">Menunggu Konfirmasi</p>
           </div>
         </div>
         <?php }

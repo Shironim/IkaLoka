@@ -12,7 +12,7 @@
 
 <body>
   
-  <?php require_once('../component/headerLogin.php')?>
+  <?php require_once('../component/headerLogin.php');?>
   
   <main id="root" class="mt-5">
     <div class="container">
@@ -139,6 +139,7 @@
                     $_SESSION['email'] = $data['email'];
                     $_SESSION['id_user'] = $data['id_user'];
                     $_SESSION['nama'] = $data['nama'];
+                    echo"<script>alert('Berhasil Login')</script>";
                     echo"<script>document.location.href='home'</script>";
                   }
                 }
@@ -149,7 +150,7 @@
       </div>
     </div>
   </main>
-  <script src="<?= base_url('asset/js/validasi.js')?>"></script>
+  <!-- <script src="<?= base_url('asset/js/validasi.js')?>"></script> -->
   <?php require_once('../component/footerLogin.php')?>
   <?php require_once('../component/script.php')?>
 </body>

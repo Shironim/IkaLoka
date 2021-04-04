@@ -17,7 +17,7 @@
 <section class="container-xl container-md container-sm container">
   <div class="row">
     <div class="col-lg-4 col-md-4 col-sm-12 col-12 mb-4">
-      <img src="asset/img/1.jpg" class="p-0 img-responsive-md img-fluid rounded" alt="...">
+      <img src="<?= base_url('asset/img/'.$produk['gambar'])?>" class="p-0 img-responsive-md img-fluid rounded" alt="...">
     </div>
     <div class="col-lg-8 col-md-8 col-sm-10 col-10">
       <h1 class="fs-3"><?= $produk['nama_produk']?></h1>
@@ -74,7 +74,7 @@
       <div class="col-lg-3 col-md-4 col-6 px-lg-2 py-lg-2 px-1 py-1">
         <a href="produk-<?= $produk['id_produk']?>" class="text-dark text-decoration-none">
           <div class="card" style="width: 100%;">
-            <img src="asset/img/1.jpg" class="card-img-top" alt="...">
+            <img src="<?= base_url('asset/img/'.$produk['gambar'])?>" class="card-img-top" alt="...">
             <?php
               if ($produk['isMusim'] == 1) {?>
                 <span class="badge bg-primary position-absolute">Musim Ikan</span>

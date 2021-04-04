@@ -5,7 +5,10 @@
 <html lang="en">
 
 <head>
-  <?php require_once('component/meta.php')?>
+  <?php require_once('component/meta.php');
+  // echo $_SESSION['email'];
+  // echo $_SESSION['nama'];
+  // echo $_SESSION['id_user'];?>
 </head>
 
 <body>
@@ -40,7 +43,7 @@
         }
       }else if ($_GET['page'] == 'tambahkeranjang') {
         if (isset($_SESSION['email'])) {
-          require_once('page/tambahkeranjang.php');
+          require_once('page/kurangkeranjang.php');
         }else{
           echo"<script>document.location.href='login'</script>";
         }

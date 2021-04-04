@@ -45,19 +45,25 @@
                 $email = mysqli_real_escape_string($conn, $_POST['email']);
                 $nm_lengkap = mysqli_real_escape_string($conn, $_POST['nama_lengkap']);
                 $password = password_hash("$_POST[password]",PASSWORD_DEFAULT);
+                $log = mysqli_query($conn,"SELECT email FROM user WHERE email = '$email'");
 
-                $query = mysqli_query($conn,"INSERT INTO user (nama,email,password,bergabung) VALUES('$nm_lengkap','$email','$password',NOW())") or die(mysqli_error());
-
-                if($query){ // Cek jika proses simpan ke database sukses atau tidak
-                  // Jika Sukses, Lakukan :
-                  // $_SESSION['email'] = $email;
-                  $log = mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM user WHERE email = '$email'"));
-                  $_SESSION['email'] = $log['email'];
-                  $_SESSION['id_user'] = $log['id_user'];
-                  $_SESSION['nama'] = $log['nama'];
-                  echo"<script>document.location.href='home'</script>";
+                // echo $log['email'];
+                if (mysqli_num_rows($log) == 0) {
+                  $SQL ="INSERT INTO user (nama,email,password,bergabung,telp,alamat,kota,kecamatan,kd_pos) VALUES('$nm_lengkap','$email','$password',NOW(),'','','','','')";
+                  $query = mysqli_query($conn,$SQL) or die(mysqli_error($conn));
+                  if (!$query) {
+                    echo "Not Inserted";
+                  } else {
+                    // echo "INSERTED!ss";
+                    $fetchlog = mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM user WHERE email = '$email'"));
+                    $_SESSION['email'] = $email;
+                    $_SESSION['nama'] = $nm_lengkap;
+                    $_SESSION['id_user'] = $fetchlog['id_user'];
+                    echo"<script>alert('Berhasil daftar, Selamat Bergabung')</script>";
+                    echo"<script>document.location.href='home'</script>";
+                  }
                 }else{
-                  mysqli_connect_errno();
+                  echo"<script>alert('email sudah ada, silakan login')</script>";
                 }
               }
             ?>

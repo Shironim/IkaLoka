@@ -1,4 +1,4 @@
-<section id="carosel-img">
+<!-- <section id="carosel-img">
   <div class="container rounded">
   <div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="carousel">
     <div class="carousel-indicators">
@@ -36,7 +36,7 @@
     </button>
   </div>
   </div>
-</section>
+</section> -->
 <section id="alert">
   <div class="container">
     <button class=" text-start w-100 mt-3 alert alert-info " role="alert" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -64,7 +64,7 @@
       <div class="col-lg-3 col-md-4 col-6 px-lg-2 py-lg-2 px-1 py-1">
         <a href="produk-<?= $produk['id_produk']?>" class="text-dark text-decoration-none">
           <div class="card" style="width: 100%;">
-            <img src="asset/img/1.jpg" class="card-img-top" alt="...">
+            <img src="<?= base_url('asset/img/'.$produk['gambar'])?>" class="card-img-top" alt="...">
             <?php
               if ($produk['isMusim'] == 1) {?>
                 <span class="badge bg-primary position-absolute">Musim Ikan</span>
@@ -75,11 +75,11 @@
                 if ($produk['diskon'] > 0) {?>
                 <p class="card-diskon mb-2">
                   <span class="diskon me-lg-2 me-md-2 me-sm-1 me-0"><?= $produk['diskon']?>%</span>
-                  <span class="price text-muted">Rp. <?= number_format($produk['harga'])?>/0.5Kg</span>
+                  <span class="price text-muted">Rp. <?= number_format($produk['harga'])?>/Kg</span>
                 </p>
-                <p class="card-price mb-0">Rp. <?= number_format($harga_total)?>/0.5Kg</p>
+                <p class="card-price mb-0">Rp. <?= number_format($harga_total)?>/Kg</p>
               <?php }else{?>
-                <p class="card-price mb-0">Rp. <?= number_format($harga_total)?>/0.5Kg</p>
+                <p class="card-price mb-0">Rp. <?= number_format($harga_total)?>/Kg</p>
               <?php }?>
               <!-- <p class="card-star p-0">
                 <i class="fas fa-star"></i>
@@ -118,7 +118,7 @@
       <div class="col-lg-3 col-md-4 col-6 px-lg-2 py-lg-2 px-1 py-1">
         <a href="produk-<?= $produk['id_produk']?>" class="text-dark text-decoration-none">
           <div class="card" style="width: 100%;">
-            <img src="asset/img/1.jpg" class="card-img-top" alt="...">
+            <img src="<?= base_url('asset/img/'.$produk['gambar'])?>" class="card-img-top" alt="...">
             <?php
               if ($produk['isMusim'] == 1) {?>
                 <span class="badge bg-primary position-absolute">Musim Ikan</span>
@@ -129,11 +129,11 @@
                 if ($produk['diskon'] > 0) {?>
                 <p class="card-diskon mb-2">
                   <span class="diskon me-lg-2 me-md-2 me-sm-1 me-0"><?= $produk['diskon']?>%</span>
-                  <span class="price text-muted">Rp. <?= number_format($produk['harga'])?>/0.5Kg</span>
+                  <span class="price text-muted">Rp. <?= number_format($produk['harga'])?>/Kg</span>
                 </p>
-                <p class="card-price mb-0">Rp. <?= number_format($harga_total)?>/0.5Kg</p>
+                <p class="card-price mb-0">Rp. <?= number_format($harga_total)?>/Kg</p>
               <?php }else{?>
-                <p class="card-price mb-0">Rp. <?= number_format($harga_total)?>/0.5Kg</p>
+                <p class="card-price mb-0">Rp. <?= number_format($harga_total)?>/Kg</p>
               <?php }?>
               <!-- <p class="card-star p-0">
                 <i class="fas fa-star"></i>
@@ -157,16 +157,17 @@
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
       <div class="modal-body">
-        ...
+        <p><b>Pembelian</b></p>
+        <p>Pesanan pembelian maks jam 15.00 </p>
+        <p>Tidak ada minimal pembelian ikan </p>
+        <p><b>Pengiriman</b></p>
+        <p>Pengiriman dilakukan jam 16.00</p>
+        <p>Setiap pembelian akan dikonfirmasi via Nomor Telephone / WhatsApp</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <!--<button type="button" class="btn btn-primary">Save changes</button>-->
       </div>
     </div>
   </div>

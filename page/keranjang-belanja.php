@@ -201,7 +201,7 @@
       <div class='row'>
         <div class='col-3'>
           <img class='img-fluid w-auto'
-            src='https://dashboard.tumbasin.id/wp-content/uploads/2020/05/Kentang_t.png' alt=''>
+            src='<?= base_url('asset/img/'.$produk['gambar'])?>' alt=''>
         </div>
         <div class='col-4 nama-produk'>
           <p class='fs-5 fw-normal m-0'><?= $produk['nama_produk']?></p>

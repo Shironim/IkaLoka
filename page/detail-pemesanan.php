@@ -1,5 +1,5 @@
 <?php 
-  require_once('../config/_config.php');
+  require_once('../konfig/konfig.php');
   $users = mysqli_query($conn,"SELECT * FROM user WHERE id_user = '$_SESSION[id_user]'");
   $user = mysqli_fetch_array($users);
 ?>
@@ -111,11 +111,11 @@
               <div class="row mb-3 he-60 justify-content-between">
                 <div class="col-lg-3 col-md-3 col-sm-3 col-3 text-center">
                   <img class="img-fluid w-auto he-60"
-                    src="https://dashboard.tumbasin.id/wp-content/uploads/2020/05/Kentang_t.png" alt="">
+                    src="<?= base_url('asset/img/'.$produk['gambar'])?>" alt="">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-3">
                   <p class="fs-5 m-0"><?= $produk['nama_produk']?></p>
-                  <p class="fs-6 m-0"><?= $harga_total_rp?>/0.5kg</p>
+                  <p class="fs-6 m-0"><?= $harga_total_rp?>/kg</p>
                 </div>
                 <div class="col-lg-2 col-md-2 col-sm-2 col-3 text-center">
                   <p class="fs-5 m-0"><?= $kilo?> Kg</p>
@@ -161,7 +161,7 @@
             alamat = '$_POST[alamat]',
             kota = '$_POST[kota]',
             kecamatan = '$_POST[kecamatan]',
-            kd_pos = '$_POST[ks_pos]'
+            kd_pos = '$_POST[kd_pos]'
 
             WHERE id_user = '$_SESSION[id_user]'
 
@@ -171,14 +171,9 @@
               $produks = mysqli_query($conn,"SELECT * from produk WHERE id_produk='$key'");
               $produk = mysqli_fetch_array($produks);
               $stok = $produk['stok'] - $val;
-              // echo $stok; 
               $harga = $produk['harga'];
-              // echo $harga;
-              // echo "</br>";
               if ($produk['diskon'] > 0) {
                 $diskon = $produk['diskon']*$harga/100;
-                // echo $diskon;
-                // echo "</br>";
               }else{
                 $diskon = 0;
               }
@@ -200,6 +195,7 @@
                 }
               }
             }
+            echo"<script>alert('Pembelian Berhasil')</script>";
             echo"<script>document.location.href='home'</script>";
           }
         }
